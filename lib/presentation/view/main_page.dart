@@ -52,7 +52,7 @@ class _MainPageState extends State<MainPage> {
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: PreferredSize(
-              preferredSize: const Size(double.infinity, 80),
+              preferredSize: const Size(double.infinity, 100),
               child: SafeArea(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -63,18 +63,11 @@ class _MainPageState extends State<MainPage> {
                         color: Colors.white,
                       ),
                       child: const Padding(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 10, top: 20),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Ivan',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontStyle: FontStyle.italic,
-                              ),
-                            ),
                             Text(
                               'News',
                               style: TextStyle(

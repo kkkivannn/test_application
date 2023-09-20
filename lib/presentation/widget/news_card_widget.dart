@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/presentation/widget/news_page.dart';
 
@@ -43,19 +42,25 @@ class NewsCardWidget extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(13),
-              child: CachedNetworkImage(
+              child: Image.asset(
+                image,
                 height: 200,
                 width: double.infinity,
                 fit: BoxFit.cover,
-                imageUrl: image,
-                progressIndicatorBuilder: (context, url, downloadProgress) => Center(
-                  child: CircularProgressIndicator(
-                    value: downloadProgress.progress,
-                    valueColor: const AlwaysStoppedAnimation(Color(0xffE6E6E6)),
-                  ),
-                ),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
+              // child: CachedNetworkImage(
+              //   height: 200,
+              //   width: double.infinity,
+              //   fit: BoxFit.cover,
+              //   imageUrl: image,
+              //   progressIndicatorBuilder: (context, url, downloadProgress) => Center(
+              //     child: CircularProgressIndicator(
+              //       value: downloadProgress.progress,
+              //       valueColor: const AlwaysStoppedAnimation(Color(0xffE6E6E6)),
+              //     ),
+              //   ),
+              //   errorWidget: (context, url, error) => const Icon(Icons.error),
+              // ),
             ),
             const SizedBox(
               height: 14,

@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class NewsPage extends StatelessWidget {
@@ -18,7 +17,7 @@ class NewsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size(double.infinity, 80),
+        preferredSize: const Size(double.infinity, 100),
         child: SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -29,18 +28,11 @@ class NewsPage extends StatelessWidget {
                   color: Colors.white,
                 ),
                 child: const Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 10, top: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Ivan',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
                       Text(
                         'News',
                         style: TextStyle(
@@ -76,18 +68,11 @@ class NewsPage extends StatelessWidget {
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(13),
-            child: CachedNetworkImage(
-              height: 216,
+            child: Image.asset(
+              image,
+              height: 200,
               width: double.infinity,
               fit: BoxFit.cover,
-              imageUrl: image,
-              progressIndicatorBuilder: (context, url, downloadProgress) => Center(
-                child: CircularProgressIndicator(
-                  value: downloadProgress.progress,
-                  valueColor: const AlwaysStoppedAnimation(Color(0xffE6E6E6)),
-                ),
-              ),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
           const SizedBox(

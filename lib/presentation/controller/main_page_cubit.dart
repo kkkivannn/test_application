@@ -25,6 +25,11 @@ final class MainPageCubit extends Cubit<MainPageState> {
         if (androidDeviceInfo.isPhysicalDevice) {
           if (prefs.getString('url_key') == null) {
             final UrlModel data = await RemoteFirebaseConfigService().init();
+            if (data.url == '' || data.url.isEmpty) {
+              final String news = await rootBundle.loadString('lib/core/json/news.json');
+              final NewsModel newsModel = NewsModel.fromJson(json.decode(news));
+              emit(MainPageStubState(newsModel: newsModel));
+            }
             await prefs.setString('url_key', data.url);
             emit(MainPageLoadedState(url: data.url));
           } else {

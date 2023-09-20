@@ -1,15 +1,21 @@
 part of 'main_page_cubit.dart';
 
-class MainPageState {}
+sealed class MainPageState {}
 
-class MainPageInitialState extends MainPageState {}
+final class MainPageInitialState extends MainPageState {}
 
-class MainPageLoadingState extends MainPageState {}
+final class MainPageLoadingState extends MainPageState {}
 
-class MainPageLoadedState extends MainPageState {
+final class MainPageStubState extends MainPageState {
+  final NewsModel newsModel;
+
+  MainPageStubState({required this.newsModel});
+}
+
+final class MainPageLoadedState extends MainPageState {
   final String url;
 
   MainPageLoadedState({required this.url});
 }
 
-class MainPageErrorState extends MainPageState {}
+final class MainPageErrorState extends MainPageState {}

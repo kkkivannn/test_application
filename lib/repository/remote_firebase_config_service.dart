@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:test_app/core/models/url_model.dart';
+import 'package:test_app/core/models/url_model/url_model.dart';
 
 class RemoteFirebaseConfigService {
   final remoteConfig = FirebaseRemoteConfig.instance;
